@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class MainActivity extends AppCompatActivity {
 
 //    private Button showMoney;
@@ -37,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void makeItRain(View view) {
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
         moneyCounter += 1000;
-        moneyText.setText("$" + Integer.toString(moneyCounter));
+        moneyText.setText(numberFormat.format(moneyCounter));
 
         Log.d("MIR", "makeItRain: Tapped " + moneyCounter);
     }
