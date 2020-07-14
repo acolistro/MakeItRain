@@ -3,4 +3,5 @@
     <string name="title">You Have</string>
     <string name="money_amount">$0</string>
     <string name="button">Make It Rain</string>
+    <string name="say_something">Say Something</string>
 </resources>
