@@ -6,18 +6,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button showMoney;
-    private Button showTag;
+//    private Button showMoney;
+//    private Button showTag;
+
+    private TextView moneyText;
+    private int moneyCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showMoney = findViewById(R.id.make_rain);
-        showTag = findViewById(R.id.show_tag);
+        moneyText = findViewById(R.id.money_text);
+//        showMoney = findViewById(R.id.make_rain);
+//        showTag = findViewById(R.id.show_tag);
 
 //        showMoney.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -32,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void makeItRain(View view) {
-        Log.d("MIR", "onClick: SHOW MONEY");
+        moneyCounter += 1000;
+        moneyText.setText("$" + Integer.toString(moneyCounter));
+
+        Log.d("MIR", "makeItRain: Tapped " + moneyCounter);
     }
 }
