@@ -2,11 +2,13 @@ package com.example.makeitrain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView moneyText;
     private int moneyCounter = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showTag(View view) {
-        Log.d("MYTAG", "onClick: SHOW TAG");
+        Toast.makeText(getApplicationContext(), R.string.app_name, Toast.LENGTH_SHORT)
+                .show();
+
+//        Log.d("MYTAG", "onClick: SHOW TAG");
     }
 
     public void makeItRain(View view) {
@@ -43,6 +49,30 @@ public class MainActivity extends AppCompatActivity {
         moneyCounter += 1000;
         moneyText.setText(numberFormat.format(moneyCounter));
 
-        Log.d("MIR", "makeItRain: Tapped " + moneyCounter);
+//        if (moneyCounter >= 10000) {
+//            moneyText.setTextColor(getResources().getColor(R.color.myColor));
+//            Toast.makeText(getApplicationContext(), "WHOA YOU'RE RICH!!", Toast.LENGTH_SHORT)
+//                    .show();
+//        }
+
+        switch (moneyCounter) {
+            case 5000 :
+                moneyText.setTextColor(Color.BLACK);
+                break;
+            case 6000 :
+                moneyText.setTextColor(Color.CYAN);
+                break;
+            case 9000 :
+                moneyText.setTextColor(Color.MAGENTA);
+                break;
+            case 10000 :
+                moneyText.setTextColor(getResources().getColor(R.color.myColor));
+                Toast.makeText(getApplicationContext(), "WHOA YOU'RE RICH!!", Toast.LENGTH_SHORT)
+                      .show();
+            default:
+                break;
+        }
+
+//        Log.d("MIR", "makeItRain: Tapped " + moneyCounter);
     }
 }
