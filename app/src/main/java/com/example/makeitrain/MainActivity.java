@@ -19,13 +19,19 @@ public class MainActivity extends AppCompatActivity {
         showMoney = findViewById(R.id.make_rain);
         showTag = findViewById(R.id.show_tag);
 
-        showMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("MYTAG", "onClick: SHOW MONEY");
-            }
-        });
+//        showMoney.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("MYTAG", "onClick: SHOW MONEY");
+//            }
+//        });
+    }
 
+    public void showTag(View view) {
+        Log.d("MYTAG", "onClick: SHOW TAG");
+    }
 
+    public void makeItRain(View view) {
+        Log.d("MIR", "onClick: SHOW MONEY");
     }
 }
